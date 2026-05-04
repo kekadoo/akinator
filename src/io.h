@@ -27,4 +27,7 @@ void io_error(IO_interface *io, const char *msg);
 // Освободить IO_interface
 void io_free(IO_interface *io);
 
+
+
+
 #endif
