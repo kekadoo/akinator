@@ -398,7 +398,24 @@ int save_tree_to_file(TreeNode *root, const char *filename) {
   fclose(file);
   return 0;
 }
+void add_new_object(TreeNode *wrong_leaf, const char *new_object,
+                    const char *new_question, int answer_for_new){
+    old_obj = create_object_node(strdub(wrong_leaf->data));
+    new_obj = create_object_node(strdub(new_object));
 
+    wrong_leaf->is_question = 1
+    wrong_leaf->data = strdub(new_question);
+    if (answer_for_new) {
+        wrong_leaf->right = new_obj;
+        wrong_leaf->left = old_obj;
+    }
+    else{
+        wrong_leaf->right = old_obj;
+        wrong_leaf->left = new_obj;
+    }
+
+
+}
 int main() {
   SetConsoleCP(1251);
   SetConsoleOutputCP(1251);
@@ -406,6 +423,7 @@ int main() {
   TreeNode *animal1 = create_object_node("Кошка");
   TreeNode *animal2 = create_object_node("Собака");
   TreeNode *question = create_question_node("Это животное лает?", animal1, animal2);
+    add_new_object(animal1, "Мышь", "Оно мяукает?", 0);
 
   // Сохраняем в файл (форматированный)
   if (save_tree_to_file(question, "tree.json") == 0) {
