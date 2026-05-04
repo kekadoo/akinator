@@ -4,35 +4,34 @@
 typedef struct IO_interface IO_interface;
 
 typedef struct TreeNode {
-    int is_question;        // 1 - вопрос, 0 - объект
-    char* data;             // текст вопроса или объекта
-    struct TreeNode* left;  // ветка "нет"
-    struct TreeNode* right; // ветка "да"
+    int is_question;        // 1 - РІРѕРїСЂРѕСЃ, 0 - РѕР±СЉРµРєС‚
+    char* data;             // С‚РµРєСЃС‚ РІРѕРїСЂРѕСЃР° РёР»Рё РѕР±СЉРµРєС‚Р°
+    struct TreeNode* left;  // РІРµС‚РєР° "РЅРµС‚"
+    struct TreeNode* right; // РІРµС‚РєР° "РґР°"
 } TreeNode;
 
-// Создать лист-объект
+// РЎРѕР·РґР°С‚СЊ Р»РёСЃС‚-РѕР±СЉРµРєС‚
 TreeNode* create_object_node(const char* object_name);
 
-// Создать узел-вопрос
+// РЎРѕР·РґР°С‚СЊ СѓР·РµР»-РІРѕРїСЂРѕСЃ
 TreeNode* create_question_node(const char* question_text,
     TreeNode* no_branch, TreeNode* yes_branch);
 
-// Загрузить дерево из файла (возвращает корень)
+// Р—Р°РіСЂСѓР·РёС‚СЊ РґРµСЂРµРІРѕ РёР· С„Р°Р№Р»Р° (РІРѕР·РІСЂР°С‰Р°РµС‚ РєРѕСЂРµРЅСЊ)
 TreeNode* load_tree_from_file(const char* filename);
 
-// Сохранить дерево в файл
+// РЎРѕС…СЂР°РЅРёС‚СЊ РґРµСЂРµРІРѕ РІ С„Р°Р№Р»
 int save_tree_to_file(TreeNode* root, const char* filename);
 
-// Очистить всё дерево
+// РћС‡РёСЃС‚РёС‚СЊ РІСЃС‘ РґРµСЂРµРІРѕ
 void free_tree(TreeNode* root);
 
-// Запуск угадывания: возвращает 1, если объект угадан, 0 - если дообучение
+// Р—Р°РїСѓСЃРє СѓРіР°РґС‹РІР°РЅРёСЏ: РІРѕР·РІСЂР°С‰Р°РµС‚ 1, РµСЃР»Рё РѕР±СЉРµРєС‚ СѓРіР°РґР°РЅ, 0 - РµСЃР»Рё РґРѕРѕР±СѓС‡РµРЅРёРµ
 int play_round(TreeNode* root, IO_interface* io);
 
-// Добавить новый объект и вопрос на место листа
+// Р”РѕР±Р°РІРёС‚СЊ РЅРѕРІС‹Р№ РѕР±СЉРµРєС‚ Рё РІРѕРїСЂРѕСЃ РЅР° РјРµСЃС‚Рѕ Р»РёСЃС‚Р°
 void add_new_object(TreeNode* wrong_leaf, const char* new_object,
     const char* new_question, int answer_for_new);
-
 
 TreeNode* create_default_tree(void);
 

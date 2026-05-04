@@ -3,13 +3,13 @@
 #include <stdlib.h>
 
 
-// Ñîçäàòü ëèñò-îáúåêò
+// Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ Ð»Ð¸ÑÑ‚-Ð¾Ð±ÑŠÐµÐºÑ‚
 TreeNode* create_object_node(const char* object_name) {
     (void)object_name;
     return NULL;
 }
 
-// Ñîçäàòü óçåë-âîïðîñ
+// Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ ÑƒÐ·ÐµÐ»-Ð²Ð¾Ð¿Ñ€Ð¾Ñ
 TreeNode* create_question_node(const char* question_text,
     TreeNode* no_branch, TreeNode* yes_branch) {
     (void)question_text;
@@ -18,32 +18,32 @@ TreeNode* create_question_node(const char* question_text,
     return NULL;
 }
 
-// Çàãðóçèòü äåðåâî èç ôàéëà (âîçâðàùàåò êîðåíü)
+// Ð—Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð´ÐµÑ€ÐµÐ²Ð¾ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð° (Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ ÐºÐ¾Ñ€ÐµÐ½ÑŒ)
 TreeNode* load_tree_from_file(const char* filename) {
     (void)filename;
     return NULL;
 }
 
-// Ñîõðàíèòü äåðåâî â ôàéë
+// Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ð´ÐµÑ€ÐµÐ²Ð¾ Ð² Ñ„Ð°Ð¹Ð»
 int save_tree_to_file(TreeNode* root, const char* filename) {
     (void)root;
     (void)filename;
     return 0;
 }
 
-// Î÷èñòèòü âñ¸ äåðåâî
+// ÐžÑ‡Ð¸ÑÑ‚Ð¸Ñ‚ÑŒ Ð²ÑÑ‘ Ð´ÐµÑ€ÐµÐ²Ð¾
 void free_tree(TreeNode* root) {
     (void)root;
 }
 
-// Çàïóñê óãàäûâàíèÿ: âîçâðàùàåò 1, åñëè îáúåêò óãàäàí, 0 - åñëè äîîáó÷åíèå
+// Ð—Ð°Ð¿ÑƒÑÐº ÑƒÐ³Ð°Ð´Ñ‹Ð²Ð°Ð½Ð¸Ñ: Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ 1, ÐµÑÐ»Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚ ÑƒÐ³Ð°Ð´Ð°Ð½, 0 - ÐµÑÐ»Ð¸ Ð´Ð¾Ð¾Ð±ÑƒÑ‡ÐµÐ½Ð¸Ðµ
 int play_round(TreeNode* root, IO_interface* io) {
     (void)root;
     (void)io;
     return 0;
 }
 
-// Äîáàâèòü íîâûé îáúåêò è âîïðîñ íà ìåñòî ëèñòà
+// Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð½Ð¾Ð²Ñ‹Ð¹ Ð¾Ð±ÑŠÐµÐºÑ‚ Ð¸ Ð²Ð¾Ð¿Ñ€Ð¾Ñ Ð½Ð° Ð¼ÐµÑÑ‚Ð¾ Ð»Ð¸ÑÑ‚Ð°
 void add_new_object(TreeNode* wrong_leaf, const char* new_object,
     const char* new_question, int answer_for_new) {
     (void)wrong_leaf;
@@ -62,11 +62,8 @@ static TreeNode* create_node(int is_question, const char* data) {
 }
 
 TreeNode* create_default_tree() {
-    TreeNode* root = create_node(1, "Ýòî À?");
-    root->right = create_node(0, "Ýòî À");
-    root->left = create_node(0, "Ýòî Á");
+    TreeNode* root = create_node(1, "Ð­Ñ‚Ð¾ Ð?");
+    root->right = create_node(0, "Ð­Ñ‚Ð¾ Ð");
+    root->left = create_node(0, "Ð­Ñ‚Ð¾ Ð‘");
     return root;
 }
-
-
-
