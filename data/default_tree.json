@@ -1,0 +1,16 @@
+{
+  "is_question": 1,
+  "data": "Это животное больше кошки?",
+  "left": {
+    "is_question": 0,
+    "data": "Мышь",
+    "left": null,
+    "right": null
+  },
+  "right": {
+    "is_question": 0,
+    "data": "Собака",
+    "left": null,
+    "right": null
+  }
+}
