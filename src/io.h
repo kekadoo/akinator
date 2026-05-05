@@ -1,7 +1,12 @@
 ﻿#ifndef IO_H
 #define IO_H
 
+#include "tree.h"
+
 typedef struct IO_interface IO_interface; // скрытая структура
+
+// Запуск угадывания: возвращает 1, если объект угадан, 0 - если дообучение
+int play_round(TreeNode* root, IO_interface* io);
 
 // Создать объект ввода/вывода (можно хранить файл лога и т.п.)
 IO_interface* io_create();

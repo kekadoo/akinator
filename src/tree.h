@@ -24,8 +24,6 @@ int save_tree_to_file(TreeNode *root, const char *filename);
 // Очистить всё дерево
 void free_tree(TreeNode *root);
 
-// Запуск угадывания: возвращает 1, если объект угадан, 0 - если дообучение
-//int play_round(TreeNode *root, IO_interface *io);
 
 // Добавить новый объект и вопрос на место листа
 void add_new_object(TreeNode *wrong_leaf, const char *new_object,

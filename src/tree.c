@@ -416,59 +416,6 @@ void add_new_object(TreeNode *wrong_leaf, const char *new_object,
 
 
 }
-int play_round(TreeNode *root, IO_interface *io) {
-    if (!root || !io) {
-        io_error(io, "Невозможно начать игру: дерево пустое.");
-        return -1;
-    }
-
-    TreeNode *current = root;
-
-    while (current->is_question) {
-        int answer = ask_question(io, current->data);
-
-        if (answer == -1) {
-            return -1;
-        }
-
-        if (answer) {
-            current = current->right;
-        } else {
-            current = current->left;
-        }
-
-        if (!current) {
-            io_error(io, "Ошибка структуры дерева: отсутствует ветка.");
-            return -1;
-        }
-    }
-
-    int confirmed = confirm_object(io, current->data);
-
-    if (confirmed) {
-        return 1;
-    }
-
-    char *real_object = ask_real_object(io, current->data);
-    if (!real_object) {
-        return -1;
-    }
-
-    char *new_question = ask_new_question(io, real_object, current->data);
-    if (!new_question) {
-        free(real_object);
-        return -1;
-    }
-
-    int answer_for_new = ask_answer_for_new(io, new_question, real_object);
-
-    add_new_object(current, real_object, new_question, answer_for_new);
-
-    free(real_object);
-    free(new_question);
-
-    return 0;
-}
 // int main() {
 //     SetConsoleCP(1251);
 //     SetConsoleOutputCP(1251);
