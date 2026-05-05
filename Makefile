@@ -9,7 +9,7 @@ SRC = src
 TESTS = tests
 
 # Списки объектных файлов
-GAME_OBJS = $(BUILD)\tree.obj $(BUILD)\io.obj $(BUILD)\utils.obj $(BUILD)\main.obj
+GAME_OBJS = $(BUILD)\tree.obj $(BUILD)\io.obj $(BUILD)\utils.obj $(BUILD)\main.obj $(BUILD)\game.obj
 TEST_OBJS = $(BUILD)\tree.obj $(BUILD)\io.obj $(BUILD)\utils.obj $(BUILD)\test_tree.obj
 
 # Цели
@@ -40,9 +40,14 @@ $(BUILD)\main.obj: $(SRC)\main.c $(SRC)\tree.h $(SRC)\io.h $(SRC)\utils.h
 	@if not exist $(BUILD) mkdir $(BUILD)
 	$(CC) /c $(CFLAGS) /Fo$@ $(SRC)\main.c
 
+$(BUILD)\game.obj: $(SRC)\game.c $(SRC)\game.h $(SRC)\tree.h $(SRC)\io.h $(SRC)\utils.h
+	@if not exist $(BUILD) mkdir $(BUILD)
+	$(CC) /c $(CFLAGS) /Fo$@ $(SRC)\game.c
+
 $(BUILD)\test_tree.obj: $(TESTS)\test_tree.c $(SRC)\tree.h $(SRC)\io.h $(SRC)\utils.h
 	@if not exist $(BUILD) mkdir $(BUILD)
 	$(CC) /c $(CFLAGS) /Fo$@ $(TESTS)\test_tree.c
+
 
 # Линковка игры
 $(BIN)\akinator.exe: $(GAME_OBJS)
