@@ -37,10 +37,13 @@ typedef struct {
     int position;
 } JSONParser;
 
-// Прототипы функций
+// Парсинг узла
 TreeNode* parse_node(JSONParser *parser);
+// Парсинг строки строки
 char* parse_string(JSONParser *parser);
+// Парсинг числа
 int parse_integer(JSONParser *parser);
+// Пропуск пробела
 void skip_whitespace(JSONParser *parser);
 char peek_char(JSONParser *parser);
 char get_char(JSONParser *parser);
