@@ -72,9 +72,7 @@ char* parse_string(JSONParser *parser) {
 
     int start = parser->position;
 
-    // Ищем закрывающую кавычку
     while (parser->json[parser->position] && parser->json[parser->position] != '"') {
-        // Пропускаем экранированные символы
         if (parser->json[parser->position] == '\\') {
             parser->position++;
             if (parser->json[parser->position]) {
@@ -99,13 +97,11 @@ char* parse_string(JSONParser *parser) {
     strncpy(str, parser->json + start, length);
     str[length] = '\0';
 
-    // Пропускаем закрывающую кавычку
     parser->position++;
 
     return str;
 }
 
-// Парсинг целого числа
 int parse_integer(JSONParser *parser) {
     skip_whitespace(parser);
 
@@ -129,7 +125,6 @@ int parse_integer(JSONParser *parser) {
     return value * sign;
 }
 
-// Проверка на null
 int parse_null(JSONParser *parser) {
     skip_whitespace(parser);
 
@@ -146,15 +141,12 @@ int parse_null(JSONParser *parser) {
     return 1;
 }
 
-// Парсинг значения (объект, строка, число, null)
 TreeNode* parse_value(JSONParser *parser) {
     char ch = peek_char(parser);
 
     if (ch == '{') {
-        // Парсим объект (узел дерева)
         return parse_node(parser);
     } else if (ch == '"') {
-        // Строка - такого быть не должно в нашей структуре, но на всякий случай
         char *str = parse_string(parser);
         if (str) {
             TreeNode *node = malloc(sizeof(TreeNode));
@@ -167,7 +159,6 @@ TreeNode* parse_value(JSONParser *parser) {
             return node;
         }
     } else if (isdigit(ch) || ch == '-') {
-        // Число - для is_question
         int value = parse_integer(parser);
         TreeNode *node = malloc(sizeof(TreeNode));
         if (node) {
@@ -178,7 +169,6 @@ TreeNode* parse_value(JSONParser *parser) {
         }
         return node;
     } else if (ch == 'n') {
-        // null
         if (parse_null(parser)) {
             return NULL;
         }
@@ -187,7 +177,6 @@ TreeNode* parse_value(JSONParser *parser) {
     return NULL;
 }
 
-// Парсинг узла дерева
 TreeNode* parse_node(JSONParser *parser) {
     skip_whitespace(parser);
 
@@ -200,13 +189,11 @@ TreeNode* parse_node(JSONParser *parser) {
         return NULL;
     }
 
-    // Инициализация
     node->is_question = 0;
     node->data = NULL;
     node->left = NULL;
     node->right = NULL;
 
-    // Парсим поля
     while (1) {
         skip_whitespace(parser);
 
@@ -215,7 +202,6 @@ TreeNode* parse_node(JSONParser *parser) {
             break;
         }
 
-        // Парсим имя поля
         char *key = parse_string(parser);
         if (!key) {
             free(node->data);
@@ -223,7 +209,6 @@ TreeNode* parse_node(JSONParser *parser) {
             return NULL;
         }
 
-        // Ожидаем двоеточие
         if (get_char(parser) != ':') {
             free(key);
             free(node->data);
@@ -231,7 +216,6 @@ TreeNode* parse_node(JSONParser *parser) {
             return NULL;
         }
 
-        // Парсим значение
         if (strcmp(key, "is_question") == 0) {
             TreeNode *value_node = parse_value(parser);
             if (value_node) {
@@ -253,13 +237,11 @@ TreeNode* parse_node(JSONParser *parser) {
             node->right = parse_value(parser);
         }
         else {
-            // Неизвестное поле - пропускаем
             parse_value(parser);
         }
 
         free(key);
 
-        // Проверяем запятую
         skip_whitespace(parser);
         if (peek_char(parser) == ',') {
             get_char(parser);
@@ -270,7 +252,6 @@ TreeNode* parse_node(JSONParser *parser) {
     return node;
 }
 
-// Основная функция загрузки дерева из файла
 TreeNode* load_tree_from_file(const char *filename) {
     FILE *file = fopen(filename, "r");
     if (!file) {
@@ -278,12 +259,10 @@ TreeNode* load_tree_from_file(const char *filename) {
         return NULL;
     }
 
-    // Определяем размер файла
     fseek(file, 0, SEEK_END);
     long file_size = ftell(file);
     fseek(file, 0, SEEK_SET);
 
-    // Читаем файл
     char *json_string = malloc(file_size + 1);
     if (!json_string) {
         fclose(file);
@@ -295,27 +274,23 @@ TreeNode* load_tree_from_file(const char *filename) {
     json_string[read_size] = '\0';
     fclose(file);
 
-    // Создаем парсер
     JSONParser parser;
     parser.json = json_string;
     parser.position = 0;
 
-    // Парсим дерево
     TreeNode *tree = parse_node(&parser);
 
     free(json_string);
     return tree;
 }
 
-// Вспомогательная функция для экранирования строки (для JSON)
 char* escape_json_string(const char *str) {
     if (!str) return strdup("");
 
-    // Подсчитываем нужный размер
     int escaped_len = 0;
     for (int i = 0; str[i]; i++) {
         if (str[i] == '"' || str[i] == '\\') {
-            escaped_len += 2;  // добавляем экранирующий слеш
+            escaped_len += 2;
         } else {
             escaped_len += 1;
         }
@@ -341,14 +316,12 @@ char* escape_json_string(const char *str) {
     return escaped;
 }
 
-// Рекурсивная функция для сохранения узла в файл с отступами
 void save_node_to_file(TreeNode *node, FILE *file, int indent_level) {
     if (!node) {
         fprintf(file, "null");
         return;
     }
 
-    // Отступы для форматирования
     char indent[100] = "";
     for (int i = 0; i < indent_level; i++) {
         strcat(indent, "  ");
@@ -356,20 +329,16 @@ void save_node_to_file(TreeNode *node, FILE *file, int indent_level) {
 
     fprintf(file, "{\n");
 
-    // Поле is_question
     fprintf(file, "%s  \"is_question\": %d,\n", indent, node->is_question);
 
-    // Поле data
     char *escaped_data = escape_json_string(node->data);
     fprintf(file, "%s  \"data\": \"%s\",\n", indent, escaped_data);
     free(escaped_data);
 
-    // Поле left
     fprintf(file, "%s  \"left\": ", indent);
     save_node_to_file(node->left, file, indent_level + 1);
     fprintf(file, ",\n");
 
-    // Поле right
     fprintf(file, "%s  \"right\": ", indent);
     save_node_to_file(node->right, file, indent_level + 1);
     fprintf(file, "\n");
@@ -377,7 +346,6 @@ void save_node_to_file(TreeNode *node, FILE *file, int indent_level) {
     fprintf(file, "%s}", indent);
 }
 
-// Основная функция сохранения дерева в файл
 int save_tree_to_file(TreeNode *root, const char *filename) {
     if (!root) {
         fprintf(stderr, "Ошибка: дерево пустое\n");
@@ -392,7 +360,6 @@ int save_tree_to_file(TreeNode *root, const char *filename) {
 
     save_node_to_file(root, file, 0);
 
-    // Добавляем перевод строки в конце файла
     fprintf(file, "\n");
 
     fclose(file);
@@ -469,26 +436,3 @@ int play_round(TreeNode *root, IO_interface *io) {
 
     return 0;
 }
-// int main() {
-//     SetConsoleCP(1251);
-//     SetConsoleOutputCP(1251);
-//     // Создаем дерево вручную для примера
-//     TreeNode *animal1 = create_object_node("Кошка");
-//     TreeNode *animal2 = create_object_node("Собака");
-//     TreeNode *question = create_question_node("Это животное лает?", animal1, animal2);
-//     add_new_object(animal1, "Мышь", "Оно мяукает?", 0);
-//
-//     // Сохраняем в файл (форматированный)
-//     if (save_tree_to_file(question, "tree.json") == 0) {
-//         printf("Дерево успешно сохранено в tree.json\n");
-//     }
-//     // Загружаем обратно
-//     TreeNode *loaded = load_tree_from_file("tree.json");
-//     if (loaded) {
-//         printf("Дерево успешно загружено!\n");
-//         free_tree(loaded);
-//     }
-//
-//     free_tree(question);
-//     return 0;
-// }
