@@ -1,1 +1,46 @@
-
+{
+    "is_question": 1,
+    "data": "Он из вселенной Marvel?",
+    "left": {
+        "is_question": 1,
+        "data": "Он носит костюм летучей мыши?",
+        "left": {
+            "is_question": 1,
+            "data": "Он пришелец?",
+            "left": { "is_question": 0, "data": "Марсианский Охотник" },
+            "right": { "is_question": 0, "data": "Бэтмен" }
+        },
+        "right": {
+            "is_question": 1,
+            "data": "Он обладает сверхспособностями?",
+            "left": { "is_question": 0, "data": "Зелёная Стрела" },
+            "right": { "is_question": 0, "data": "Супермен" }
+        }
+    },
+    "right": {
+        "is_question": 1,
+        "data": "Он является членом Мстителей?",
+        "left": {
+            "is_question": 1,
+            "data": "Он использует высокотехнологичный костюм?",
+            "left": { "is_question": 0, "data": "Халк" },
+            "right": { "is_question": 0, "data": "Железный человек" }
+        },
+        "right": {
+            "is_question": 1,
+            "data": "Он использует магию?",
+            "left": {
+                "is_question": 1,
+                "data": "Он носит плащ?",
+                "left": { "is_question": 0, "data": "Алая Ведьма" },
+                "right": { "is_question": 0, "data": "Доктор Стрэндж" }
+            },
+            "right": {
+                "is_question": 1,
+                "data": "Он использует оружие ближнего боя?",
+                "left": { "is_question": 0, "data": "Капитан Америка" },
+                "right": { "is_question": 0, "data": "Тор" }
+            }
+        }
+    }
+}
