@@ -187,7 +187,9 @@ int play_round(TreeNode* root, IO_interface* io) {
     return 0;
 }
 
-// Создать объект ввода/вывода
+/**
+ * @brief Создать объект ввода/вывода
+ */ 
 IO_interface* io_create() {
     setlocale(LC_ALL, "");
 
@@ -204,7 +206,9 @@ IO_interface* io_create() {
     return io;
 }
 
-// Задать вопрос и получить ответ: 1 - да, 0 - нет, -1 - ошибка/выход
+/**
+ * @brief Задать вопрос и получить ответ: 1 - да, 0 - нет, -1 - ошибка/выход
+ */ 
 int ask_question(IO_interface* io, const char* question) {
     if (!io || !question) {
         return -1;
@@ -214,7 +218,9 @@ int ask_question(IO_interface* io, const char* question) {
     return ask_yes_no(io, "Ваш ответ (д/н): ", 1);
 }
 
-// Вывести сообщение о догадке, вернуть подтверждение: 1 - да, 0 - нет
+/** 
+ * @brief Вывести сообщение о догадке, вернуть подтверждение: 1 - да, 0 - нет
+ */
 int confirm_object(IO_interface* io, const char* object_name) {
     if (!io || !object_name) {
         return 0;
@@ -232,7 +238,9 @@ int confirm_object(IO_interface* io, const char* object_name) {
     return ask_yes_no(io, prompt, 0);
 }
 
-// Запросить правильный объект
+/** 
+ * @brief Запросить правильный объек
+ */
 char* ask_real_object(IO_interface* io, const char* wrong_object) {
     if (!io) {
         return NULL;
@@ -249,7 +257,9 @@ char* ask_real_object(IO_interface* io, const char* wrong_object) {
     return read_allocated_line(io);
 }
 
-// Запросить новый вопрос
+/** 
+ * @brief Запросить новый вопрос
+ */
 char* ask_new_question(
     IO_interface* io,
     const char* correct_object,
@@ -271,7 +281,9 @@ char* ask_new_question(
     return read_allocated_line(io);
 }
 
-// Запросить ответ на новый вопрос для правильного объекта
+/** 
+ * @brief Запросить ответ на новый вопрос для правильного объекта
+ */
 int ask_answer_for_new(
     IO_interface* io,
     const char* question,
@@ -287,7 +299,9 @@ int ask_answer_for_new(
     return ask_yes_no(io, "Как нужно отвечать? (д/н): ", 0);
 }
 
-// Вывести сообщение об ошибке
+/** 
+ * @brief Вывести сообщение об ошибке
+ */
 void io_error(IO_interface* io, const char* msg) {
     if (!msg) {
         msg = "Неизвестная ошибка.";
@@ -299,8 +313,10 @@ void io_error(IO_interface* io, const char* msg) {
         fprintf(stderr, "Ошибка: %s\n", msg);
     }
 }
+/** 
+ * @brief Освободить IO_interface
+ */
 
-// Освободить IO_interface
 void io_free(IO_interface* io) {
     if (!io) {
         return;

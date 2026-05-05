@@ -1,0 +1,8 @@
+var searchData=
+[
+  ['add_5fnew_5fobject_0',['add_new_object',['../tree_8c.html#aa67131e33e39d9b9c18a158f81107aad',1,'add_new_object(TreeNode *wrong_leaf, const char *new_object, const char *new_question, int answer_for_new):&#160;tree.c'],['../tree_8h.html#aa67131e33e39d9b9c18a158f81107aad',1,'add_new_object(TreeNode *wrong_leaf, const char *new_object, const char *new_question, int answer_for_new):&#160;tree.c']]],
+  ['ask_5fanswer_5ffor_5fnew_1',['ask_answer_for_new',['../io_8c.html#aa5e8aa72c5d0ed7c054ae170d76e8395',1,'ask_answer_for_new(IO_interface *io, const char *question, const char *correct_object):&#160;io.c'],['../io_8h.html#aa5e8aa72c5d0ed7c054ae170d76e8395',1,'ask_answer_for_new(IO_interface *io, const char *question, const char *correct_object):&#160;io.c']]],
+  ['ask_5fnew_5fquestion_2',['ask_new_question',['../io_8c.html#afc87faa2bce76a19f28f1f294c1d6d09',1,'ask_new_question(IO_interface *io, const char *correct_object, const char *wrong_object):&#160;io.c'],['../io_8h.html#afc87faa2bce76a19f28f1f294c1d6d09',1,'ask_new_question(IO_interface *io, const char *correct_object, const char *wrong_object):&#160;io.c']]],
+  ['ask_5fquestion_3',['ask_question',['../io_8c.html#afff04ed562216b5c77a7ca9e981d2bd1',1,'ask_question(IO_interface *io, const char *question):&#160;io.c'],['../io_8h.html#afff04ed562216b5c77a7ca9e981d2bd1',1,'ask_question(IO_interface *io, const char *question):&#160;io.c']]],
+  ['ask_5freal_5fobject_4',['ask_real_object',['../io_8c.html#a00f85aba32d3f0608176929cebb0c537',1,'ask_real_object(IO_interface *io, const char *wrong_object):&#160;io.c'],['../io_8h.html#a00f85aba32d3f0608176929cebb0c537',1,'ask_real_object(IO_interface *io, const char *wrong_object):&#160;io.c']]]
+];

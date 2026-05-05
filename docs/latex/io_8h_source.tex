@@ -1,0 +1,35 @@
+\doxysection{io.\+h}
+\hypertarget{io_8h_source}{}\label{io_8h_source}\index{src/io.h@{src/io.h}}
+\doxymbox{\hyperlink{io_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IO\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IO\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{tree_8h}{tree.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_i_o__interface}{IO\_interface}}\ \doxymbox{\hyperlink{struct_i_o__interface}{IO\_interface}};\ \textcolor{comment}{//\ скрытая\ структура}}
+\DoxyCodeLine{00007\ \ }
+\DoxyCodeLine{00011\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{io_8h_ac40ee5d599aba4a2c55d00ceb646b9a4}{play\_round}}(\doxymbox{\hyperlink{struct_tree_node}{TreeNode}}*\ root,\ \doxymbox{\hyperlink{struct_i_o__interface}{IO\_interface}}*\ io);}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \doxymbox{\hyperlink{struct_i_o__interface}{IO\_interface}}*\ \doxymbox{\hyperlink{io_8h_ae8f687a8496fefa5f63b382ee16b38fc}{io\_create}}();}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{io_8h_afff04ed562216b5c77a7ca9e981d2bd1}{ask\_question}}(\doxymbox{\hyperlink{struct_i_o__interface}{IO\_interface}}\ *io,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *question);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{io_8h_a02c18d612019d3573d44b49459fc7d33}{confirm\_object}}(\doxymbox{\hyperlink{struct_i_o__interface}{IO\_interface}}\ *io,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *object\_name);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{char}*\ \doxymbox{\hyperlink{io_8h_a00f85aba32d3f0608176929cebb0c537}{ask\_real\_object}}(\doxymbox{\hyperlink{struct_i_o__interface}{IO\_interface}}\ *io,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *wrong\_object);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{char}*\ \doxymbox{\hyperlink{io_8h_afc87faa2bce76a19f28f1f294c1d6d09}{ask\_new\_question}}(\doxymbox{\hyperlink{struct_i_o__interface}{IO\_interface}}\ *io,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *correct\_object,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *wrong\_object);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{io_8h_aa5e8aa72c5d0ed7c054ae170d76e8395}{ask\_answer\_for\_new}}(\doxymbox{\hyperlink{struct_i_o__interface}{IO\_interface}}\ *io,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *question,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *correct\_object);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{io_8h_aa89f9a54e4a5012a949f18ba58d4569b}{io\_error}}(\doxymbox{\hyperlink{struct_i_o__interface}{IO\_interface}}\ *io,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{io_8h_abbf049bc4a96e50b70dc1147e243d476}{io\_free}}(\doxymbox{\hyperlink{struct_i_o__interface}{IO\_interface}}\ *io);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,48 @@
+\doxysection{tree.\+h}
+\hypertarget{tree_8h_source}{}\label{tree_8h_source}\index{src/tree.h@{src/tree.h}}
+\doxymbox{\hyperlink{tree_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TREE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TREE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_tree_node}{TreeNode}}\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_tree_node_a3e486414a3388f29d823c95ab64d770b}{is\_question}};\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1\ -\/\ вопрос,\ 0\ -\/\ объект}}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{char}\ *\doxymbox{\hyperlink{struct_tree_node_a91a70b77df95bd8b0830b49a094c2acb}{data}};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ текст\ вопроса\ или\ объекта}}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_tree_node}{TreeNode}}\ *\doxymbox{\hyperlink{struct_tree_node_a99fb5e0be96ed75527d53c3747f93c2d}{left}};\ \ \textcolor{comment}{//\ ветка\ "{}нет"{}}}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_tree_node}{TreeNode}}\ *\doxymbox{\hyperlink{struct_tree_node_a02b3bbe1406cbe1e9f0bc9cc1d5ea247}{right}};\ \textcolor{comment}{//\ ветка\ "{}да"{}}}
+\DoxyCodeLine{00009\ \}\ \doxymbox{\hyperlink{struct_tree_node}{TreeNode}};}
+\DoxyCodeLine{00010\ \ }
+\DoxyCodeLine{00014\ \doxymbox{\hyperlink{struct_tree_node}{TreeNode}}*\ \doxymbox{\hyperlink{tree_8h_ac40f90a8f983844eceee16930c69663a}{create\_object\_node}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *object\_name);}
+\DoxyCodeLine{00015\ \ }
+\DoxyCodeLine{00019\ \doxymbox{\hyperlink{struct_tree_node}{TreeNode}}*\ \doxymbox{\hyperlink{tree_8h_a79f1f61c5a885f33afe697bcca7dee2d}{create\_question\_node}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *question\_text,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_tree_node}{TreeNode}}\ *no\_branch,\ \doxymbox{\hyperlink{struct_tree_node}{TreeNode}}\ *yes\_branch);}
+\DoxyCodeLine{00021\ \ }
+\DoxyCodeLine{00025\ \doxymbox{\hyperlink{struct_tree_node}{TreeNode}}*\ \doxymbox{\hyperlink{tree_8h_af1469d307a14220673a686b4b48d1054}{load\_tree\_from\_file}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *filename);}
+\DoxyCodeLine{00026\ \ }
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{tree_8h_aa174389e1aaed0f9f3985412a21ec29f}{save\_tree\_to\_file}}(\doxymbox{\hyperlink{struct_tree_node}{TreeNode}}\ *root,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *filename);}
+\DoxyCodeLine{00031\ \ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{tree_8h_a629a2f5947cfc6ba3a843d4b2417434f}{free\_tree}}(\doxymbox{\hyperlink{struct_tree_node}{TreeNode}}\ *root);}
+\DoxyCodeLine{00036\ \ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{tree_8h_aa67131e33e39d9b9c18a158f81107aad}{add\_new\_object}}(\doxymbox{\hyperlink{struct_tree_node}{TreeNode}}\ *wrong\_leaf,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *new\_object,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *new\_question,\ \textcolor{keywordtype}{int}\ answer\_for\_new);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\doxymbox{\hyperlink{struct_j_s_o_n_parser_a4dd85a1ffd4add568eb3b646e857eadc}{json}};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_j_s_o_n_parser_a401e942526aac47cef94f478182486e7}{position}};}
+\DoxyCodeLine{00050\ \}\ \doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}};}
+\DoxyCodeLine{00051\ \ }
+\DoxyCodeLine{00055\ \doxymbox{\hyperlink{struct_tree_node}{TreeNode}}*\ \doxymbox{\hyperlink{tree_8h_a8358462e0942d924793159ab03903d21}{parse\_node}}(\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}}\ *parser);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{char}*\ \doxymbox{\hyperlink{tree_8h_a1c9a2e57591659f07023a7d459021489}{parse\_string}}(\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}}\ *parser);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{tree_8h_ad0f9d6f37ab5b73f864a10e407bee540}{parse\_integer}}(\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}}\ *parser);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{tree_8h_a574564de9d0ac7f472ab6f5a3c63b370}{skip\_whitespace}}(\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}}\ *parser);}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{char}\ \doxymbox{\hyperlink{tree_8h_a9daeac9d18b26632745df23c080cac58}{peek\_char}}(\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}}\ *parser);}
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{char}\ \doxymbox{\hyperlink{tree_8h_a2b37aabc0c9ffb4c6c13768b861254c6}{get\_char}}(\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}}\ *parser);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
