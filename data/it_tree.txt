@@ -1,0 +1,26 @@
+{
+    "is_question": 1,
+    "data": "Это связано с программированием?",
+    "left": {
+        "is_question": 1,
+        "data": "Это связано с дизайном?",
+        "left": { "is_question": 0, "data": "Системный администратор" },
+        "right": { "is_question": 0, "data": "UI/UX дизайнер" }
+    },
+    "right": {
+        "is_question": 1,
+        "data": "Это ближе к низкоуровневой разработке?",
+        "left": {
+            "is_question": 1,
+            "data": "Это связано с вебом?",
+            "left": { "is_question": 0, "data": "Data Scientist" },
+            "right": { "is_question": 0, "data": "Frontend разработчик" }
+        },
+        "right": {
+            "is_question": 1,
+            "data": "Работа связана с железом?",
+            "left": { "is_question": 0, "data": "Backend разработчик" },
+            "right": { "is_question": 0, "data": "Embedded инженер" }
+        }
+    }
+}
