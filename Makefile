@@ -50,7 +50,7 @@ $(BUILD)\game.obj: $(SRC)\game.c $(SRC)\game.h $(SRC)\tree.h $(SRC)\io.h $(SRC)\
 
 $(BUILD)\test_tree.obj: $(TESTS)\test_tree.c $(SRC)\tree.h $(SRC)\io.h $(SRC)\utils.h
 	@if not exist $(BUILD) mkdir $(BUILD)
-	$(CC) /c $(CFLAGS) /Fo$@ $(TESTS)\test_tree.c
+	$(CC) /c $(CFLAGS) /Isrc /Fo$@ $(TESTS)\test_tree.c
 
 
 # Линковка игры
