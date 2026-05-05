@@ -1,0 +1,46 @@
+{
+    "is_question": 1,
+    "data": "Он из вселенной Marvel?",
+    "left": {
+        "is_question": 1,
+        "data": "Он противник Бэтмена?",
+        "left": {
+            "is_question": 1,
+            "data": "Он человек без сверхспособностей?",
+            "left": { "is_question": 0, "data": "Джокер" },
+            "right": { "is_question": 0, "data": "Бэйн" }
+        },
+        "right": {
+            "is_question": 1,
+            "data": "Он использует магию или сверхъестественные силы?",
+            "left": { "is_question": 0, "data": "Степной Волк" },
+            "right": { "is_question": 0, "data": "Лекс Лютор" }
+        }
+    },
+    "right": {
+        "is_question": 1,
+        "data": "Он является инопланетянином?",
+        "left": {
+            "is_question": 1,
+            "data": "Он стремится уничтожить половину вселенной?",
+            "left": { "is_question": 0, "data": "Танос" },
+            "right": { "is_question": 0, "data": "Ронан Обвинитель" }
+        },
+        "right": {
+            "is_question": 1,
+            "data": "Он использует магию?",
+            "left": {
+                "is_question": 1,
+                "data": "Он связан с Асгардом?",
+                "left": { "is_question": 0, "data": "Гелла" },
+                "right": { "is_question": 0, "data": "Локи" }
+            },
+            "right": {
+                "is_question": 1,
+                "data": "Он учёный, ставший злодеем?",
+                "left": { "is_question": 0, "data": "Зелёный Гоблин" },
+                "right": { "is_question": 0, "data": "Доктор Осьминог" }
+            }
+        }
+    }
+}
