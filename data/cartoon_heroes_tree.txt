@@ -1,0 +1,31 @@
+{
+    "is_question": 1,
+    "data": "Это человек?",
+    "left": {
+        "is_question": 1,
+        "data": "Это животное?",
+        "left": { "is_question": 0, "data": "Шрек" },
+        "right": {
+            "is_question": 1,
+            "data": "Он живёт в море?",
+            "left": { "is_question": 0, "data": "Том" },
+            "right": { "is_question": 0, "data": "Губка Боб" }
+        }
+    },
+    "right": {
+        "is_question": 1,
+        "data": "Он супергерой?",
+        "left": {
+            "is_question": 1,
+            "data": "Он ребёнок?",
+            "left": { "is_question": 0, "data": "Скуби-Ду" },
+            "right": { "is_question": 0, "data": "Стивен Юниверс" }
+        },
+        "right": {
+            "is_question": 1,
+            "data": "Он носит красно-синий костюм?",
+            "left": { "is_question": 0, "data": "Мистер Невероятный" },
+            "right": { "is_question": 0, "data": "Человек-паук" }
+        }
+    }
+}
