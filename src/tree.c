@@ -400,11 +400,11 @@ int save_tree_to_file(TreeNode *root, const char *filename) {
 }
 void add_new_object(TreeNode *wrong_leaf, const char *new_object,
                     const char *new_question, int answer_for_new){
-    old_obj = create_object_node(strdub(wrong_leaf->data));
-    new_obj = create_object_node(strdub(new_object));
+    TreeNode* old_obj = create_object_node(strdup(wrong_leaf->data));
+    TreeNode* new_obj = create_object_node(strdup(new_object));
 
-    wrong_leaf->is_question = 1
-    wrong_leaf->data = strdub(new_question);
+    wrong_leaf->is_question = 1;
+    wrong_leaf->data = strdup(new_question);
     if (answer_for_new) {
         wrong_leaf->right = new_obj;
         wrong_leaf->left = old_obj;
