@@ -1,0 +1,152 @@
+\doxysection{src/\+io.c File Reference}
+\hypertarget{io_8c}{}\label{io_8c}\index{src/io.c@{src/io.c}}
+{\ttfamily \+\#include "{}io.\+h"{}}\newline
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \+\#include $<$string.\+h$>$}\newline
+{\ttfamily \+\#include $<$locale.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{io_8c_af595fc29cdbd0c97d6b08a1c13305077}{IO\+\_\+\+MAX\+\_\+\+INPUT}}~512
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{io_8c_ac40ee5d599aba4a2c55d00ceb646b9a4}{play\+\_\+round}} (\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*}root, \doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*}io)
+\begin{DoxyCompactList}\small\item\em Запуск угадывания:\+ возвращает 1, если объект угадан, 0 -\/ если дообучение \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{io_8c_ae8f687a8496fefa5f63b382ee16b38fc}{io\+\_\+create}} ()
+\begin{DoxyCompactList}\small\item\em Создать объект ввода/\+вывода \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{io_8c_afff04ed562216b5c77a7ca9e981d2bd1}{ask\+\_\+question}} (\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*}io, const char \texorpdfstring{$\ast$}{*}question)
+\begin{DoxyCompactList}\small\item\em Задать вопрос и получить ответ:\+ 1 -\/ да, 0 -\/ нет, -\/1 -\/ ошибка/\+выход \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{io_8c_a02c18d612019d3573d44b49459fc7d33}{confirm\+\_\+object}} (\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*}io, const char \texorpdfstring{$\ast$}{*}object\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Вывести сообщение о догадке, вернуть подтверждение:\+ 1 -\/ да, 0 -\/ нет \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{io_8c_a00f85aba32d3f0608176929cebb0c537}{ask\+\_\+real\+\_\+object}} (\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*}io, const char \texorpdfstring{$\ast$}{*}wrong\+\_\+object)
+\begin{DoxyCompactList}\small\item\em Запросить правильный объек \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{io_8c_afc87faa2bce76a19f28f1f294c1d6d09}{ask\+\_\+new\+\_\+question}} (\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*}io, const char \texorpdfstring{$\ast$}{*}correct\+\_\+object, const char \texorpdfstring{$\ast$}{*}wrong\+\_\+object)
+\begin{DoxyCompactList}\small\item\em Запросить новый вопрос \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{io_8c_aa5e8aa72c5d0ed7c054ae170d76e8395}{ask\+\_\+answer\+\_\+for\+\_\+new}} (\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*}io, const char \texorpdfstring{$\ast$}{*}question, const char \texorpdfstring{$\ast$}{*}correct\+\_\+object)
+\begin{DoxyCompactList}\small\item\em Запросить ответ на новый вопрос для правильного объекта \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{io_8c_aa89f9a54e4a5012a949f18ba58d4569b}{io\+\_\+error}} (\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*}io, const char \texorpdfstring{$\ast$}{*}msg)
+\begin{DoxyCompactList}\small\item\em Вывести сообщение об ошибке \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{io_8c_abbf049bc4a96e50b70dc1147e243d476}{io\+\_\+free}} (\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*}io)
+\begin{DoxyCompactList}\small\item\em Освободить \doxylink{struct_i_o__interface}{IO\+\_\+interface}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{io_8c_doc-define-members}
+\Hypertarget{io_8c_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{io_8c_af595fc29cdbd0c97d6b08a1c13305077}\index{io.c@{io.c}!IO\_MAX\_INPUT@{IO\_MAX\_INPUT}}
+\index{IO\_MAX\_INPUT@{IO\_MAX\_INPUT}!io.c@{io.c}}
+\doxysubsubsection{\texorpdfstring{IO\_MAX\_INPUT}{IO\_MAX\_INPUT}}
+{\footnotesize\ttfamily \label{io_8c_af595fc29cdbd0c97d6b08a1c13305077} 
+\+\#define IO\+\_\+\+MAX\+\_\+\+INPUT~512}
+
+
+
+\label{io_8c_doc-func-members}
+\Hypertarget{io_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{io_8c_aa5e8aa72c5d0ed7c054ae170d76e8395}\index{io.c@{io.c}!ask\_answer\_for\_new@{ask\_answer\_for\_new}}
+\index{ask\_answer\_for\_new@{ask\_answer\_for\_new}!io.c@{io.c}}
+\doxysubsubsection{\texorpdfstring{ask\_answer\_for\_new()}{ask\_answer\_for\_new()}}
+{\footnotesize\ttfamily \label{io_8c_aa5e8aa72c5d0ed7c054ae170d76e8395} 
+int ask\+\_\+answer\+\_\+for\+\_\+new (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*}}]{io}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{question}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{correct\+\_\+object}{}\end{DoxyParamCaption})}
+
+
+
+Запросить ответ на новый вопрос для правильного объекта 
+
+\Hypertarget{io_8c_afc87faa2bce76a19f28f1f294c1d6d09}\index{io.c@{io.c}!ask\_new\_question@{ask\_new\_question}}
+\index{ask\_new\_question@{ask\_new\_question}!io.c@{io.c}}
+\doxysubsubsection{\texorpdfstring{ask\_new\_question()}{ask\_new\_question()}}
+{\footnotesize\ttfamily \label{io_8c_afc87faa2bce76a19f28f1f294c1d6d09} 
+char \texorpdfstring{$\ast$}{*} ask\+\_\+new\+\_\+question (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*}}]{io}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{correct\+\_\+object}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{wrong\+\_\+object}{}\end{DoxyParamCaption})}
+
+
+
+Запросить новый вопрос 
+
+\Hypertarget{io_8c_afff04ed562216b5c77a7ca9e981d2bd1}\index{io.c@{io.c}!ask\_question@{ask\_question}}
+\index{ask\_question@{ask\_question}!io.c@{io.c}}
+\doxysubsubsection{\texorpdfstring{ask\_question()}{ask\_question()}}
+{\footnotesize\ttfamily \label{io_8c_afff04ed562216b5c77a7ca9e981d2bd1} 
+int ask\+\_\+question (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*}}]{io}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{question}{}\end{DoxyParamCaption})}
+
+
+
+Задать вопрос и получить ответ:\+ 1 -\/ да, 0 -\/ нет, -\/1 -\/ ошибка/\+выход 
+
+Задать вопрос и получить ответ (1 -\/ да, 0 -\/ нет, -\/1 -\/ ошибка/\+выход).
+
+Задать вопрос и получить ответ:\+ 1 -\/ да, 0 -\/ нет, -\/1 -\/ ошибка/\+выход \Hypertarget{io_8c_a00f85aba32d3f0608176929cebb0c537}\index{io.c@{io.c}!ask\_real\_object@{ask\_real\_object}}
+\index{ask\_real\_object@{ask\_real\_object}!io.c@{io.c}}
+\doxysubsubsection{\texorpdfstring{ask\_real\_object()}{ask\_real\_object()}}
+{\footnotesize\ttfamily \label{io_8c_a00f85aba32d3f0608176929cebb0c537} 
+char \texorpdfstring{$\ast$}{*} ask\+\_\+real\+\_\+object (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*}}]{io}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{wrong\+\_\+object}{}\end{DoxyParamCaption})}
+
+
+
+Запросить правильный объек 
+
+Запросить правильный объект (строка выделяется malloc, caller free).
+
+Запросить правильный объек \Hypertarget{io_8c_a02c18d612019d3573d44b49459fc7d33}\index{io.c@{io.c}!confirm\_object@{confirm\_object}}
+\index{confirm\_object@{confirm\_object}!io.c@{io.c}}
+\doxysubsubsection{\texorpdfstring{confirm\_object()}{confirm\_object()}}
+{\footnotesize\ttfamily \label{io_8c_a02c18d612019d3573d44b49459fc7d33} 
+int confirm\+\_\+object (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*}}]{io}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{object\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Вывести сообщение о догадке, вернуть подтверждение:\+ 1 -\/ да, 0 -\/ нет 
+
+Вывести сообщение о догадке, вернуть подтверждение (1 -\/ да, 0 -\/ нет).
+
+Вывести сообщение о догадке, вернуть подтверждение:\+ 1 -\/ да, 0 -\/ нет \Hypertarget{io_8c_ae8f687a8496fefa5f63b382ee16b38fc}\index{io.c@{io.c}!io\_create@{io\_create}}
+\index{io\_create@{io\_create}!io.c@{io.c}}
+\doxysubsubsection{\texorpdfstring{io\_create()}{io\_create()}}
+{\footnotesize\ttfamily \label{io_8c_ae8f687a8496fefa5f63b382ee16b38fc} 
+\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*} io\+\_\+create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Создать объект ввода/\+вывода 
+
+Создать объект ввода/\+вывода (можно хранить файл лога и т.\+п.).
+
+Создать объект ввода/\+вывода \Hypertarget{io_8c_aa89f9a54e4a5012a949f18ba58d4569b}\index{io.c@{io.c}!io\_error@{io\_error}}
+\index{io\_error@{io\_error}!io.c@{io.c}}
+\doxysubsubsection{\texorpdfstring{io\_error()}{io\_error()}}
+{\footnotesize\ttfamily \label{io_8c_aa89f9a54e4a5012a949f18ba58d4569b} 
+void io\+\_\+error (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*}}]{io}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{msg}{}\end{DoxyParamCaption})}
+
+
+
+Вывести сообщение об ошибке 
+
+\Hypertarget{io_8c_abbf049bc4a96e50b70dc1147e243d476}\index{io.c@{io.c}!io\_free@{io\_free}}
+\index{io\_free@{io\_free}!io.c@{io.c}}
+\doxysubsubsection{\texorpdfstring{io\_free()}{io\_free()}}
+{\footnotesize\ttfamily \label{io_8c_abbf049bc4a96e50b70dc1147e243d476} 
+void io\+\_\+free (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*}}]{io}{}\end{DoxyParamCaption})}
+
+
+
+Освободить \doxylink{struct_i_o__interface}{IO\+\_\+interface}. 
+
+\Hypertarget{io_8c_ac40ee5d599aba4a2c55d00ceb646b9a4}\index{io.c@{io.c}!play\_round@{play\_round}}
+\index{play\_round@{play\_round}!io.c@{io.c}}
+\doxysubsubsection{\texorpdfstring{play\_round()}{play\_round()}}
+{\footnotesize\ttfamily \label{io_8c_ac40ee5d599aba4a2c55d00ceb646b9a4} 
+int play\+\_\+round (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*}}]{root}{, }\item[{\doxymbox{\hyperlink{struct_i_o__interface}{IO\+\_\+interface}} \texorpdfstring{$\ast$}{*}}]{io}{}\end{DoxyParamCaption})}
+
+
+
+Запуск угадывания:\+ возвращает 1, если объект угадан, 0 -\/ если дообучение 
+

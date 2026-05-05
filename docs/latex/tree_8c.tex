@@ -1,0 +1,184 @@
+\doxysection{src/\+tree.c File Reference}
+\hypertarget{tree_8c}{}\label{tree_8c}\index{src/tree.c@{src/tree.c}}
+{\ttfamily \+\#include "{}tree.\+h"{}}\newline
+{\ttfamily \+\#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \+\#include $<$string.\+h$>$}\newline
+{\ttfamily \+\#include $<$ctype.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$windows.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{tree_8c_ac40f90a8f983844eceee16930c69663a}{create\+\_\+object\+\_\+node}} (const char \texorpdfstring{$\ast$}{*}object\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Создать лист-\/объект \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{tree_8c_a79f1f61c5a885f33afe697bcca7dee2d}{create\+\_\+question\+\_\+node}} (const char \texorpdfstring{$\ast$}{*}question\+\_\+text, \doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*}no\+\_\+branch, \doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*}yes\+\_\+branch)
+\begin{DoxyCompactList}\small\item\em Создать узел-\/вопрос \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{tree_8c_a629a2f5947cfc6ba3a843d4b2417434f}{free\+\_\+tree}} (\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*}root)
+\begin{DoxyCompactList}\small\item\em Очистить всё дерево \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{tree_8c_a574564de9d0ac7f472ab6f5a3c63b370}{skip\+\_\+whitespace}} (\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}} \texorpdfstring{$\ast$}{*}parser)
+\begin{DoxyCompactList}\small\item\em Пропуск пробела \end{DoxyCompactList}\item 
+char \doxymbox{\hyperlink{tree_8c_a9daeac9d18b26632745df23c080cac58}{peek\+\_\+char}} (\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}} \texorpdfstring{$\ast$}{*}parser)
+\item 
+char \doxymbox{\hyperlink{tree_8c_a2b37aabc0c9ffb4c6c13768b861254c6}{get\+\_\+char}} (\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}} \texorpdfstring{$\ast$}{*}parser)
+\item 
+char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{tree_8c_a1c9a2e57591659f07023a7d459021489}{parse\+\_\+string}} (\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}} \texorpdfstring{$\ast$}{*}parser)
+\begin{DoxyCompactList}\small\item\em Парсинг строки строки \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{tree_8c_ad0f9d6f37ab5b73f864a10e407bee540}{parse\+\_\+integer}} (\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}} \texorpdfstring{$\ast$}{*}parser)
+\begin{DoxyCompactList}\small\item\em Парсинг числа \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{tree_8c_a4048b52ae00cd6103394636d702c8b66}{parse\+\_\+null}} (\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}} \texorpdfstring{$\ast$}{*}parser)
+\item 
+\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{tree_8c_a57c845e1585dd8ea3ba399db68766a3e}{parse\+\_\+value}} (\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}} \texorpdfstring{$\ast$}{*}parser)
+\item 
+\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{tree_8c_a8358462e0942d924793159ab03903d21}{parse\+\_\+node}} (\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}} \texorpdfstring{$\ast$}{*}parser)
+\begin{DoxyCompactList}\small\item\em Парсинг узла \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{tree_8c_af1469d307a14220673a686b4b48d1054}{load\+\_\+tree\+\_\+from\+\_\+file}} (const char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Загрузить дерево из файла (возвращает корень). \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{tree_8c_abcdc4d3d8dd8d9b127abcb727b24c474}{escape\+\_\+json\+\_\+string}} (const char \texorpdfstring{$\ast$}{*}str)
+\item 
+void \doxymbox{\hyperlink{tree_8c_a830ca67d6c04583343b9667609dcb3bc}{save\+\_\+node\+\_\+to\+\_\+file}} (\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*}node, FILE \texorpdfstring{$\ast$}{*}file, int indent\+\_\+level)
+\item 
+int \doxymbox{\hyperlink{tree_8c_aa174389e1aaed0f9f3985412a21ec29f}{save\+\_\+tree\+\_\+to\+\_\+file}} (\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*}root, const char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Сохранить дерево в файл \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{tree_8c_aa67131e33e39d9b9c18a158f81107aad}{add\+\_\+new\+\_\+object}} (\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*}wrong\+\_\+leaf, const char \texorpdfstring{$\ast$}{*}new\+\_\+object, const char \texorpdfstring{$\ast$}{*}new\+\_\+question, int answer\+\_\+for\+\_\+new)
+\begin{DoxyCompactList}\small\item\em Добавить новый объект и вопрос на место листа \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{tree_8c_doc-func-members}
+\Hypertarget{tree_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{tree_8c_aa67131e33e39d9b9c18a158f81107aad}\index{tree.c@{tree.c}!add\_new\_object@{add\_new\_object}}
+\index{add\_new\_object@{add\_new\_object}!tree.c@{tree.c}}
+\doxysubsubsection{\texorpdfstring{add\_new\_object()}{add\_new\_object()}}
+{\footnotesize\ttfamily \label{tree_8c_aa67131e33e39d9b9c18a158f81107aad} 
+void add\+\_\+new\+\_\+object (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*}}]{wrong\+\_\+leaf}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{new\+\_\+object}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{new\+\_\+question}{, }\item[{int}]{answer\+\_\+for\+\_\+new}{}\end{DoxyParamCaption})}
+
+
+
+Добавить новый объект и вопрос на место листа 
+
+\Hypertarget{tree_8c_ac40f90a8f983844eceee16930c69663a}\index{tree.c@{tree.c}!create\_object\_node@{create\_object\_node}}
+\index{create\_object\_node@{create\_object\_node}!tree.c@{tree.c}}
+\doxysubsubsection{\texorpdfstring{create\_object\_node()}{create\_object\_node()}}
+{\footnotesize\ttfamily \label{tree_8c_ac40f90a8f983844eceee16930c69663a} 
+\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*} create\+\_\+object\+\_\+node (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{object\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Создать лист-\/объект 
+
+\Hypertarget{tree_8c_a79f1f61c5a885f33afe697bcca7dee2d}\index{tree.c@{tree.c}!create\_question\_node@{create\_question\_node}}
+\index{create\_question\_node@{create\_question\_node}!tree.c@{tree.c}}
+\doxysubsubsection{\texorpdfstring{create\_question\_node()}{create\_question\_node()}}
+{\footnotesize\ttfamily \label{tree_8c_a79f1f61c5a885f33afe697bcca7dee2d} 
+\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*} create\+\_\+question\+\_\+node (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{question\+\_\+text}{, }\item[{\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*}}]{no\+\_\+branch}{, }\item[{\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*}}]{yes\+\_\+branch}{}\end{DoxyParamCaption})}
+
+
+
+Создать узел-\/вопрос 
+
+\Hypertarget{tree_8c_abcdc4d3d8dd8d9b127abcb727b24c474}\index{tree.c@{tree.c}!escape\_json\_string@{escape\_json\_string}}
+\index{escape\_json\_string@{escape\_json\_string}!tree.c@{tree.c}}
+\doxysubsubsection{\texorpdfstring{escape\_json\_string()}{escape\_json\_string()}}
+{\footnotesize\ttfamily \label{tree_8c_abcdc4d3d8dd8d9b127abcb727b24c474} 
+char \texorpdfstring{$\ast$}{*} escape\+\_\+json\+\_\+string (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tree_8c_a629a2f5947cfc6ba3a843d4b2417434f}\index{tree.c@{tree.c}!free\_tree@{free\_tree}}
+\index{free\_tree@{free\_tree}!tree.c@{tree.c}}
+\doxysubsubsection{\texorpdfstring{free\_tree()}{free\_tree()}}
+{\footnotesize\ttfamily \label{tree_8c_a629a2f5947cfc6ba3a843d4b2417434f} 
+void free\+\_\+tree (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*}}]{root}{}\end{DoxyParamCaption})}
+
+
+
+Очистить всё дерево 
+
+\Hypertarget{tree_8c_a2b37aabc0c9ffb4c6c13768b861254c6}\index{tree.c@{tree.c}!get\_char@{get\_char}}
+\index{get\_char@{get\_char}!tree.c@{tree.c}}
+\doxysubsubsection{\texorpdfstring{get\_char()}{get\_char()}}
+{\footnotesize\ttfamily \label{tree_8c_a2b37aabc0c9ffb4c6c13768b861254c6} 
+char get\+\_\+char (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}} \texorpdfstring{$\ast$}{*}}]{parser}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tree_8c_af1469d307a14220673a686b4b48d1054}\index{tree.c@{tree.c}!load\_tree\_from\_file@{load\_tree\_from\_file}}
+\index{load\_tree\_from\_file@{load\_tree\_from\_file}!tree.c@{tree.c}}
+\doxysubsubsection{\texorpdfstring{load\_tree\_from\_file()}{load\_tree\_from\_file()}}
+{\footnotesize\ttfamily \label{tree_8c_af1469d307a14220673a686b4b48d1054} 
+\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*} load\+\_\+tree\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Загрузить дерево из файла (возвращает корень). 
+
+\Hypertarget{tree_8c_ad0f9d6f37ab5b73f864a10e407bee540}\index{tree.c@{tree.c}!parse\_integer@{parse\_integer}}
+\index{parse\_integer@{parse\_integer}!tree.c@{tree.c}}
+\doxysubsubsection{\texorpdfstring{parse\_integer()}{parse\_integer()}}
+{\footnotesize\ttfamily \label{tree_8c_ad0f9d6f37ab5b73f864a10e407bee540} 
+int parse\+\_\+integer (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}} \texorpdfstring{$\ast$}{*}}]{parser}{}\end{DoxyParamCaption})}
+
+
+
+Парсинг числа 
+
+\Hypertarget{tree_8c_a8358462e0942d924793159ab03903d21}\index{tree.c@{tree.c}!parse\_node@{parse\_node}}
+\index{parse\_node@{parse\_node}!tree.c@{tree.c}}
+\doxysubsubsection{\texorpdfstring{parse\_node()}{parse\_node()}}
+{\footnotesize\ttfamily \label{tree_8c_a8358462e0942d924793159ab03903d21} 
+\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*} parse\+\_\+node (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}} \texorpdfstring{$\ast$}{*}}]{parser}{}\end{DoxyParamCaption})}
+
+
+
+Парсинг узла 
+
+\Hypertarget{tree_8c_a4048b52ae00cd6103394636d702c8b66}\index{tree.c@{tree.c}!parse\_null@{parse\_null}}
+\index{parse\_null@{parse\_null}!tree.c@{tree.c}}
+\doxysubsubsection{\texorpdfstring{parse\_null()}{parse\_null()}}
+{\footnotesize\ttfamily \label{tree_8c_a4048b52ae00cd6103394636d702c8b66} 
+int parse\+\_\+null (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}} \texorpdfstring{$\ast$}{*}}]{parser}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tree_8c_a1c9a2e57591659f07023a7d459021489}\index{tree.c@{tree.c}!parse\_string@{parse\_string}}
+\index{parse\_string@{parse\_string}!tree.c@{tree.c}}
+\doxysubsubsection{\texorpdfstring{parse\_string()}{parse\_string()}}
+{\footnotesize\ttfamily \label{tree_8c_a1c9a2e57591659f07023a7d459021489} 
+char \texorpdfstring{$\ast$}{*} parse\+\_\+string (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}} \texorpdfstring{$\ast$}{*}}]{parser}{}\end{DoxyParamCaption})}
+
+
+
+Парсинг строки строки 
+
+\Hypertarget{tree_8c_a57c845e1585dd8ea3ba399db68766a3e}\index{tree.c@{tree.c}!parse\_value@{parse\_value}}
+\index{parse\_value@{parse\_value}!tree.c@{tree.c}}
+\doxysubsubsection{\texorpdfstring{parse\_value()}{parse\_value()}}
+{\footnotesize\ttfamily \label{tree_8c_a57c845e1585dd8ea3ba399db68766a3e} 
+\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*} parse\+\_\+value (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}} \texorpdfstring{$\ast$}{*}}]{parser}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tree_8c_a9daeac9d18b26632745df23c080cac58}\index{tree.c@{tree.c}!peek\_char@{peek\_char}}
+\index{peek\_char@{peek\_char}!tree.c@{tree.c}}
+\doxysubsubsection{\texorpdfstring{peek\_char()}{peek\_char()}}
+{\footnotesize\ttfamily \label{tree_8c_a9daeac9d18b26632745df23c080cac58} 
+char peek\+\_\+char (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}} \texorpdfstring{$\ast$}{*}}]{parser}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tree_8c_a830ca67d6c04583343b9667609dcb3bc}\index{tree.c@{tree.c}!save\_node\_to\_file@{save\_node\_to\_file}}
+\index{save\_node\_to\_file@{save\_node\_to\_file}!tree.c@{tree.c}}
+\doxysubsubsection{\texorpdfstring{save\_node\_to\_file()}{save\_node\_to\_file()}}
+{\footnotesize\ttfamily \label{tree_8c_a830ca67d6c04583343b9667609dcb3bc} 
+void save\+\_\+node\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*}}]{node}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{file}{, }\item[{int}]{indent\+\_\+level}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tree_8c_aa174389e1aaed0f9f3985412a21ec29f}\index{tree.c@{tree.c}!save\_tree\_to\_file@{save\_tree\_to\_file}}
+\index{save\_tree\_to\_file@{save\_tree\_to\_file}!tree.c@{tree.c}}
+\doxysubsubsection{\texorpdfstring{save\_tree\_to\_file()}{save\_tree\_to\_file()}}
+{\footnotesize\ttfamily \label{tree_8c_aa174389e1aaed0f9f3985412a21ec29f} 
+int save\+\_\+tree\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_tree_node}{Tree\+Node}} \texorpdfstring{$\ast$}{*}}]{root}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Сохранить дерево в файл 
+
+\Hypertarget{tree_8c_a574564de9d0ac7f472ab6f5a3c63b370}\index{tree.c@{tree.c}!skip\_whitespace@{skip\_whitespace}}
+\index{skip\_whitespace@{skip\_whitespace}!tree.c@{tree.c}}
+\doxysubsubsection{\texorpdfstring{skip\_whitespace()}{skip\_whitespace()}}
+{\footnotesize\ttfamily \label{tree_8c_a574564de9d0ac7f472ab6f5a3c63b370} 
+void skip\+\_\+whitespace (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_j_s_o_n_parser}{JSONParser}} \texorpdfstring{$\ast$}{*}}]{parser}{}\end{DoxyParamCaption})}
+
+
+
+Пропуск пробела 
+
