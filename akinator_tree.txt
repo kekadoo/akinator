@@ -1,0 +1,36 @@
+{
+  "is_question": 1,
+  "data": "Это А?",
+  "left": {
+    "is_question": 1,
+    "data": "Это В?",
+    "left": {
+      "is_question": 1,
+      "data": "Это Г?",
+      "left": {
+        "is_question": 0,
+        "data": "Б",
+        "left": null,
+        "right": null
+      },
+      "right": {
+        "is_question": 0,
+        "data": "Г",
+        "left": null,
+        "right": null
+      }
+    },
+    "right": {
+      "is_question": 0,
+      "data": "В",
+      "left": null,
+      "right": null
+    }
+  },
+  "right": {
+    "is_question": 0,
+    "data": "А",
+    "left": null,
+    "right": null
+  }
+}

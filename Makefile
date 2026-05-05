@@ -1,6 +1,6 @@
 ﻿# Makefile для Акинатора под nmake (Windows, MSVC)
 CC = cl
-CFLAGS = /W2 /WX /std:c11 /Zi /nologo
+CFLAGS = /W2 /WX /std:c11 /nologo
 LDFLAGS =
 
 BUILD = build
@@ -22,6 +22,10 @@ clean:
 	@if exist $(BUILD) rmdir /s /q $(BUILD)
 	@if exist $(BIN) rmdir /s /q $(BIN)
 	@echo Очистка завершена.
+
+run: $(BIN)\akinator.exe
+	$(BIN)\akinator.exe
+
 
 # Правила компиляции каждого .c -> .obj
 $(BUILD)\tree.obj: $(SRC)\tree.c $(SRC)\tree.h
@@ -59,4 +63,4 @@ $(BIN)\test_runner.exe: $(TEST_OBJS)
 	@if not exist $(BIN) mkdir $(BIN)
 	$(CC) $(CFLAGS) $** /Fe$@
 
-.PHONY: all clean test
+.PHONY: all clean test run
