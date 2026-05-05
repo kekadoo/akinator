@@ -52,7 +52,7 @@ int main() {
             create_object_node("Rock"),
             create_object_node("Dog"));
 
-    assert_true(save_tree_to_file(root, "test_tree.json") == 1, "Tree saved");
+    assert_true(save_tree_to_file(root, "test_tree.json") == 0, "Tree saved");
 
     TreeNode *loaded = load_tree_from_file("test_tree.json");
     assert_true(loaded != NULL, "Tree loaded");

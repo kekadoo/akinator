@@ -1,0 +1,16 @@
+{
+  "is_question": 1,
+  "data": "Is it animal?",
+  "left": {
+    "is_question": 0,
+    "data": "Rock",
+    "left": null,
+    "right": null
+  },
+  "right": {
+    "is_question": 0,
+    "data": "Dog",
+    "left": null,
+    "right": null
+  }
+}
