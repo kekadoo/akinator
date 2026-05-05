@@ -6,7 +6,7 @@
 Команда nmake all
 
 ## Как запустить
-bin\akinator.exe
+Команда nmake run
 
 ## Как запустить тесты
 Команда nmake test
