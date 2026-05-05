@@ -1,4 +1,4 @@
-#include "game.h"
+п»ї#include "game.h"
 #include "utils.h"
 
 #include <stdlib.h>
@@ -15,9 +15,9 @@ static TreeNode* create_node(int is_question, const char* data) {
 }
 
 TreeNode* create_default_tree() {
-    TreeNode* root = create_node(1, "Это А?");
-    root->right = create_node(0, "Это А");
-    root->left = create_node(0, "Это Б");
+    TreeNode* root = create_node(1, "Р­С‚Рѕ Рђ?");
+    root->right = create_node(0, "Р­С‚Рѕ Рђ");
+    root->left = create_node(0, "Р­С‚Рѕ Р‘");
     return root;
 }
 
@@ -36,11 +36,11 @@ int run_game(int argc, char* argv[]) {
     while (play_again) {
         int result = 1;
         if (result == 0) {
-            // Было дообучение, дерево изменилось (и уже сохранено внутри play_round)
-            // Можно перезагрузить root? Нет, root указывает на новое дерево.
+            // Р‘С‹Р»Рѕ РґРѕРѕР±СѓС‡РµРЅРёРµ, РґРµСЂРµРІРѕ РёР·РјРµРЅРёР»РѕСЃСЊ (Рё СѓР¶Рµ СЃРѕС…СЂР°РЅРµРЅРѕ РІРЅСѓС‚СЂРё play_round)
+            // РњРѕР¶РЅРѕ РїРµСЂРµР·Р°РіСЂСѓР·РёС‚СЊ root? РќРµС‚, root СѓРєР°Р·С‹РІР°РµС‚ РЅР° РЅРѕРІРѕРµ РґРµСЂРµРІРѕ.
             save_tree_to_file(root, tree_file);
         }
-        play_again = ask_question(io, "Сыграем ещё? (д/н)");
+        play_again = ask_question(io, "РЎС‹РіСЂР°РµРј РµС‰С‘? (Рґ/РЅ)");
     }
     free_tree(root);
     io_free(io);
