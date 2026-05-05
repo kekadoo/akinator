@@ -416,26 +416,26 @@ void add_new_object(TreeNode *wrong_leaf, const char *new_object,
 
 
 }
-int main() {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
-    // Создаем дерево вручную для примера
-    TreeNode *animal1 = create_object_node("Кошка");
-    TreeNode *animal2 = create_object_node("Собака");
-    TreeNode *question = create_question_node("Это животное лает?", animal1, animal2);
-    add_new_object(animal1, "Мышь", "Оно мяукает?", 0);
-
-    // Сохраняем в файл (форматированный)
-    if (save_tree_to_file(question, "tree.json") == 0) {
-        printf("Дерево успешно сохранено в tree.json\n");
-    }
-    // Загружаем обратно
-    TreeNode *loaded = load_tree_from_file("tree.json");
-    if (loaded) {
-        printf("Дерево успешно загружено!\n");
-        free_tree(loaded);
-    }
-
-    free_tree(question);
-    return 0;
-}
+// int main() {
+//     SetConsoleCP(1251);
+//     SetConsoleOutputCP(1251);
+//     // Создаем дерево вручную для примера
+//     TreeNode *animal1 = create_object_node("Кошка");
+//     TreeNode *animal2 = create_object_node("Собака");
+//     TreeNode *question = create_question_node("Это животное лает?", animal1, animal2);
+//     add_new_object(animal1, "Мышь", "Оно мяукает?", 0);
+//
+//     // Сохраняем в файл (форматированный)
+//     if (save_tree_to_file(question, "tree.json") == 0) {
+//         printf("Дерево успешно сохранено в tree.json\n");
+//     }
+//     // Загружаем обратно
+//     TreeNode *loaded = load_tree_from_file("tree.json");
+//     if (loaded) {
+//         printf("Дерево успешно загружено!\n");
+//         free_tree(loaded);
+//     }
+//
+//     free_tree(question);
+//     return 0;
+// }
