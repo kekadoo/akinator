@@ -1,0 +1,46 @@
+{
+    "is_question": 1,
+    "data": "Он человек?",
+    "left": {
+        "is_question": 1,
+        "data": "Он является существом из фэнтези‑мира?",
+        "left": {
+            "is_question": 1,
+            "data": "Он монстр или нечеловек?",
+            "left": { "is_question": 0, "data": "Кратос" },
+            "right": { "is_question": 0, "data": "Линк" }
+        },
+        "right": {
+            "is_question": 1,
+            "data": "Он является талисманом игровой серии?",
+            "left": { "is_question": 0, "data": "Соник" },
+            "right": { "is_question": 0, "data": "Марио" }
+        }
+    },
+    "right": {
+        "is_question": 1,
+        "data": "Он использует огнестрельное оружие?",
+        "left": {
+            "is_question": 1,
+            "data": "Он охотится на монстров?",
+            "left": { "is_question": 0, "data": "Геральт из Ривии" },
+            "right": { "is_question": 0, "data": "Алоy (Horizon)" }
+        },
+        "right": {
+            "is_question": 1,
+            "data": "Он солдат или спецагент?",
+            "left": {
+                "is_question": 1,
+                "data": "Он сражается с инопланетянами?",
+                "left": { "is_question": 0, "data": "Мастер Чиф" },
+                "right": { "is_question": 0, "data": "Сэмус Аран" }
+            },
+            "right": {
+                "is_question": 1,
+                "data": "Он действует в одиночку?",
+                "left": { "is_question": 0, "data": "Лара Крофт" },
+                "right": { "is_question": 0, "data": "Нейтан Дрейк" }
+            }
+        }
+    }
+}
