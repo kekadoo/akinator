@@ -6,13 +6,13 @@ int main(int argc, char* argv[]) {
     (void)argv;
     const char* tree_file = "akinator_tree.txt";
     TreeNode* root = load_tree_from_file(tree_file);
-    if (!root) {
-        root = create_default_tree();
-    }
+    //if (!root) {
+    //    root = create_default_tree();
+    //}
     IO_interface* io = io_create();
     int play_again = 1;
     while (play_again) {
-        int result = play_round(root, io);
+        int result = 1;
         if (result == 0) {
             // Ѕыло дообучение, дерево изменилось (и уже сохранено внутри play_round)
             // ћожно перезагрузить root? Ќет, root указывает на новое дерево.

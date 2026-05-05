@@ -1,6 +1,6 @@
 # Makefile для Акинатора под nmake (Windows, MSVC)
 CC = cl
-CFLAGS = /W4 /WX /std:c11 /Zi /nologo
+CFLAGS = /W2 /WX /std:c11 /Zi /nologo
 LDFLAGS =
 
 BUILD = build
