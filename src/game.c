@@ -2,7 +2,7 @@
 #include "utils.h"
 
 #include <stdlib.h>
-#include <stdio.h>
+#include <windows.h>
 
 
 static TreeNode* create_node(int is_question, const char* data) {
@@ -22,6 +22,8 @@ TreeNode* create_default_tree() {
 }
 
 int run_game(int argc, char* argv[]) {
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
     (void)argc;
     (void)argv;
     const char* tree_file = "akinator_tree.txt";

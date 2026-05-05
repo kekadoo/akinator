@@ -1,4 +1,4 @@
-#ifndef IO_H
+﻿#ifndef IO_H
 #define IO_H
 
 typedef struct IO_interface IO_interface; // скрытая структура

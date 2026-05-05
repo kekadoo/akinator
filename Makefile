@@ -1,4 +1,4 @@
-# Makefile для Акинатора под nmake (Windows, MSVC)
+п»ї# Makefile РґР»СЏ РђРєРёРЅР°С‚РѕСЂР° РїРѕРґ nmake (Windows, MSVC)
 CC = cl
 CFLAGS = /W2 /WX /std:c11 /Zi /nologo
 LDFLAGS =
@@ -8,11 +8,11 @@ BIN = bin
 SRC = src
 TESTS = tests
 
-# Списки объектных файлов
+# РЎРїРёСЃРєРё РѕР±СЉРµРєС‚РЅС‹С… С„Р°Р№Р»РѕРІ
 GAME_OBJS = $(BUILD)\tree.obj $(BUILD)\io.obj $(BUILD)\utils.obj $(BUILD)\main.obj $(BUILD)\game.obj
 TEST_OBJS = $(BUILD)\tree.obj $(BUILD)\io.obj $(BUILD)\utils.obj $(BUILD)\test_tree.obj
 
-# Цели
+# Р¦РµР»Рё
 all: $(BIN)\akinator.exe
 
 test: $(BIN)\test_runner.exe
@@ -21,9 +21,9 @@ test: $(BIN)\test_runner.exe
 clean:
 	@if exist $(BUILD) rmdir /s /q $(BUILD)
 	@if exist $(BIN) rmdir /s /q $(BIN)
-	@echo Очистка завершена.
+	@echo РћС‡РёСЃС‚РєР° Р·Р°РІРµСЂС€РµРЅР°.
 
-# Правила компиляции каждого .c -> .obj
+# РџСЂР°РІРёР»Р° РєРѕРјРїРёР»СЏС†РёРё РєР°Р¶РґРѕРіРѕ .c -> .obj
 $(BUILD)\tree.obj: $(SRC)\tree.c $(SRC)\tree.h
 	@if not exist $(BUILD) mkdir $(BUILD)
 	$(CC) /c $(CFLAGS) /Fo$@ $(SRC)\tree.c
@@ -49,12 +49,12 @@ $(BUILD)\test_tree.obj: $(TESTS)\test_tree.c $(SRC)\tree.h $(SRC)\io.h $(SRC)\ut
 	$(CC) /c $(CFLAGS) /Fo$@ $(TESTS)\test_tree.c
 
 
-# Линковка игры
+# Р›РёРЅРєРѕРІРєР° РёРіСЂС‹
 $(BIN)\akinator.exe: $(GAME_OBJS)
 	@if not exist $(BIN) mkdir $(BIN)
 	$(CC) $(CFLAGS) $** /Fe$@
 
-# Линковка тестов
+# Р›РёРЅРєРѕРІРєР° С‚РµСЃС‚РѕРІ
 $(BIN)\test_runner.exe: $(TEST_OBJS)
 	@if not exist $(BIN) mkdir $(BIN)
 	$(CC) $(CFLAGS) $** /Fe$@
